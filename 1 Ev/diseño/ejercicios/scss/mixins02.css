@@ -1,0 +1,18 @@
+h1 {
+  background: background;
+  height: 150px;
+  height: 600px;
+  border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+}
+
+p {
+  height: 150px;
+  background: green;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
+/*# sourceMappingURL=mixins02.css.map */

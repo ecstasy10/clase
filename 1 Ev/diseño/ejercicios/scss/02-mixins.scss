@@ -1,0 +1,18 @@
+@mixin bordes-redondeados($color: red, $height: 150px) {
+  background: $color;
+  height: $height;
+}
+h1 {
+  @include bordes-redondeados;
+  height: 600px;
+  border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+}
+p {
+  height: 150px;
+  background: green;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+}

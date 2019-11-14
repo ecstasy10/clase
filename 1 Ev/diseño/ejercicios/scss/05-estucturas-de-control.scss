@@ -1,0 +1,4 @@
+// rehacer mediante un for
+@for $i from 1 through 3 {
+.item-#{$i} { font-size: 2em*$i; }
+}
