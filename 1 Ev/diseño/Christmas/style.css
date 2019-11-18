@@ -3,10 +3,28 @@
   --inside-circle: rgb(42, 78, 87);
 }
 
-html, body {
+html,
+body {
   height: 100%;
-  background-color: #b33;
+  background-color: rgb(167, 50, 50);
   overflow: hidden;
+}
+
+div::selection, button::selection, .autor::selection {
+  background: white;
+  color: rgb(190, 41, 41);
+}
+
+@keyframes peek {
+  0% {
+  }
+
+  50% {
+    background-color: rgba(255, 255, 255, 0.384);
+  }
+
+  100% {
+  }
 }
 
 .tree {
@@ -15,14 +33,17 @@ html, body {
   left: 50%;
   margin-top: -100px;
   margin-left: -100px;
-  width: 200px;
-  height: 200px;
+  width: 12.500em;
+  height: 12.500em;
   border-radius: 50%;
   background-color: var(--main-circle);
+  animation: peek 1s;
+  animation-delay: 1.5s;
 }
+
+
 .tree:hover {
   transition: 0.4s;
-  position: relative;
   background-position: 0, 100px 80px, 100px 80px, 100px 111.1111111111px, 100px 111.1111111111px, 100px 142.8571428571px, 100px 142.8571428571px, 100px 160px, 100px 160px;
   background-image: radial-gradient(circle at 50% 18%, yellow 3%, transparent 3.5%), linear-gradient(60deg, #7dae41 8%, transparent 8.5%), linear-gradient(-60deg, #79a83f 8%, transparent 8.5%), linear-gradient(60deg, #75a33d 10%, transparent 10.5%), linear-gradient(-60deg, #719d3b 10%, transparent 10.5%), linear-gradient(60deg, #6d9839 12%, transparent 12.5%), linear-gradient(-60deg, #699237 12%, transparent 12.5%), linear-gradient(80deg, #855726 5%, transparent 5.5%), linear-gradient(-80deg, #7f5324 5%, transparent 5.5%);
   background-color: var(--inside-circle);
@@ -33,11 +54,13 @@ html, body {
     background-position: 0px 200px, 0 200px, 0px 200px, 0px 200px;
   }
 }
+
 @keyframes snow {
   100% {
     background-position: 0px 200px, 0 200px, 0px 200px, 0px 200px;
   }
 }
+
 
 .reno {
   position: absolute;
@@ -46,9 +69,11 @@ html, body {
   margin-top: -100px;
   margin-left: -100px;
   border-radius: 50%;
-  width: 200px;
+  width: 12.500em;
+  height: 12.500em;
   background-color: var(--main-circle);
-  height: 200px;
+  animation: peek 1s;
+  animation-delay: 2s;
 }
 
 .reno:hover {
@@ -58,8 +83,6 @@ html, body {
   margin-top: -100px;
   margin-left: -100px;
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
   background-color: var(--inside-circle);
   transition: 0.2s;
 }
@@ -72,8 +95,8 @@ button {
   margin-top: -100px;
   margin-left: -100px;
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 8.5em;
+  height: 8.5em;
   border-radius: 50%;
   border-style: inherit;
   background-color: var(--main-circle);
@@ -90,22 +113,77 @@ button:hover {
   transition: 0.5s;
 }
 
-.papa {
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -100px;
-  border-radius: 50%;
-  width: 200px;
-  background-color: var(--main-circle);
-  height: 200px;
+.text-focus-in {
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
-.papa:hover {
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+
+.feliz {
   position: absolute;
-  background-color: var(--inside-circle);
-  transition: 0.5s;
+  top: 80%;
+  left: 20%;
+  right: 20%;
+  margin-top: -100px;
+  border-radius: 1em;
+  background-color: var(--main-circle);
+  height: 12em;
+  color: white;
+}
+
+.feliztext {
+  margin-top: 3em;
+  margin-left: 5%;
+  margin-right: 5%;
+   margin-top: 3em;
+  text-align: center;
+  font-family: 'Montserrat',
+  sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.autor {
+  margin-bottom: .2em;
+  text-align: center;
+  opacity: .2;
+  color: white;
 }
 
 
@@ -148,10 +226,12 @@ button:hover {
   margin-top: -100px;
   margin-left: -100px;
   border-radius: 50%;
-  width: 200px;
+  width: 12.500em;
+  height: 12.500em;
   background-color: var(--main-circle);
-  height: 200px;
   text-align: center;
+  animation: peek 1s;
+  animation-delay: 1s;
 }
 
 .veinticinco:hover {
@@ -179,12 +259,14 @@ button:hover {
   0% {
     opacity: 0;
   }
+
   19.999%,
   22%,
   62.999%,
   64% {
-     opacity: .5;
+    opacity: .5;
   }
+
   64.999%,
   70%,
   100% {
@@ -192,7 +274,7 @@ button:hover {
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.4), 1px -1px 0 rgba(255, 255, 255, 0.4), -1px 1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(255, 255, 255, 0.4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
   }
 
-  0%
+  0%,
   20%,
   21.999%,
   63%,
@@ -209,6 +291,7 @@ button:hover {
   0% {
     opacity: 0;
   }
+
   19.999%,
   22%,
   62.999%,
@@ -259,6 +342,13 @@ button:hover {
   border-radius: 60%;
 }
 
+.winter-is-coming-2,
+.snow-2 {
+  z-index: 100;
+  pointer-events: none;
+  border-radius: 2%;
+}
+
 .winter-is-coming {
   overflow: hidden;
   position: absolute;
@@ -268,7 +358,28 @@ button:hover {
   max-width: 100%;
 }
 
+.winter-is-coming-2 {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  height: 99%;
+  width: 100%;
+  max-width: 100%;
+}
+
 .snow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation: falling linear infinite both;
+  animation: falling linear infinite both;
+  -webkit-transform: translate3D(0, -100%, 0);
+  transform: translate3D(0, -100%, 0);
+}
+
+.snow-2 {
   position: absolute;
   top: 0;
   right: 0;
